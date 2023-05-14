@@ -213,6 +213,7 @@ router.get('/checkout/shipping', async (req, res, next) => {
     // Recalculate shipping
     config.modules.loaded.shipping.calculateShipping(
         netCartAmount,
+        req.session.totalcartProducts,
         config,
         req
     );
